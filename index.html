@@ -41,15 +41,12 @@
     @media(max-width: 620px){.contact-container { flex-direction: column; gap: 20px; }
 }
 
-    /* Accessibility and responsive nav */
     .skip-link{position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden}
     .skip-link:focus{left:16px;top:16px;width:auto;height:auto;padding:8px 12px;background:#000;color:#fff;border-radius:6px;z-index:1200}
 
-    /* Focus-visible for keyboard users */
     :focus{outline: none}
     :focus-visible{outline:3px solid #ffd54f;outline-offset:3px}
 
-    /* Responsive nav */
     .nav-toggle{display:none;background:transparent;border:none;color:inherit;font-size:22px;padding:6px 8px;border-radius:8px}
     @media(max-width:780px){
       nav.navbar{align-items:center}
@@ -351,7 +348,6 @@
     if(e.key === 'Escape' && lightbox.classList.contains('show')) closeLightbox();
   });
 
-  // Nav toggle behavior
   if(navToggle && mainNav){
     navToggle.addEventListener('click', ()=>{
       const expanded = navToggle.getAttribute('aria-expanded') === 'true';
@@ -359,7 +355,6 @@
       mainNav.classList.toggle('show');
     });
 
-    // Close nav when link clicked (mobile)
     mainNav.querySelectorAll('a[href^="#"]').forEach(link => {
       link.addEventListener('click', function(e) {
         e.preventDefault();
