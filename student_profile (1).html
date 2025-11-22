@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Student Information</title>
+  <style>
+    html {scroll-behavior: smooth;}
+    :root{--accent:#1565c0;--muted:#666}
+    *{box-sizing:border-box}
+    body{font-family: prompt, -apple-system, "Segoe UI", Roboto, "Noto Sans Thai", sans-serif;margin:0;color:#222;line-height:1.45}
+    header {
+  background: linear-gradient(90deg, var(--accent), #4a90e2);
+  color: #fff;
+  padding: 14px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+    .container{max-width:1000px;margin:18px auto;padding:0 16px}
+    nav.navbar{display:flex;gap:12px;align-items:center}
+    nav.navbar .brand{font-weight:700;font-size:18px}
+    nav.navbar ul{list-style:none;display:flex;gap:10px;margin:0;padding:0}
+    nav.navbar a{color:inherit;text-decoration:none;padding:8px 10px;border-radius:8px}
+    nav.navbar a:hover{background:rgba(255,255,255,0.12)}
+    section{background:#fff;margin-bottom:18px;padding:18px;border-radius:10px;box-shadow:0 6px 20px rgba(0,0,0,0.065)}
+    .profile-grid{display:grid;grid-template-columns:220px 1fr;gap:18px}
+    .avatar{width:220px;height:220px;border-radius:10px;background:#eee;display:flex;align-items:center;justify-content:center;overflow:hidden}
+    .avatar img{width:100%;height:100%;object-fit:cover}
+    h2{margin:0 0 12px}
+    dl{display:grid;grid-template-columns:160px 1fr;gap:8px 18px}
+    dt{font-weight:700;color:var(--muted)}
+    .tags{display:flex;flex-wrap:wrap;gap:8px}
+    .tag{background:#f1f5fb;padding:6px 10px;border-radius:8px;border:1px solid #e6eefc}
+    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px}
+    .gallery img{width:100%;height:120px;object-fit:cover;border-radius:8px}
+    table{width:100%;border-collapse:collapse}
+    th,td{padding:8px;border:1px solid #eee;text-align:center}
+    footer{background:#111;color:#fff;padding:12px 16px;text-align:center;border-top:4px solid rgba(255,255,255,0.04)}
+    @media(max-width: 620px){.contact-container { flex-direction: column; gap: 20px; }
+}
+
+    /* Accessibility and responsive nav */
+    .skip-link{position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden}
+    .skip-link:focus{left:16px;top:16px;width:auto;height:auto;padding:8px 12px;background:#000;color:#fff;border-radius:6px;z-index:1200}
+
+    /* Focus-visible for keyboard users */
+    :focus{outline: none}
+    :focus-visible{outline:3px solid #ffd54f;outline-offset:3px}
+
+    /* Responsive nav */
+    .nav-toggle{display:none;background:transparent;border:none;color:inherit;font-size:22px;padding:6px 8px;border-radius:8px}
+    @media(max-width:780px){
+      nav.navbar{align-items:center}
+      .nav-toggle{display:inline-flex}
+      nav.navbar ul{position:absolute;right:16px;top:64px;background:linear-gradient(180deg,rgba(255,255,255,0.98),#fff);flex-direction:column;padding:12px;border-radius:8px;box-shadow:0 8px 30px rgba(0,0,0,0.08);display:none}
+      nav.navbar ul.show{display:flex}
+      nav.navbar ul li{margin:6px 0}
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">ข้ามไปยังเนื้อหา</a>
+  <header>
+    <div class="container">
+      <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="brand">Student Information</div>
+        <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="เมนูหลัก">☰</button>
+        <ul id="main-nav">
+          <li><a href="#about">ประวัติส่วนตัว</a></li>
+          <li><a href="#gallery">คลังรูปภาพ</a></li>
+          <li><a href="#contact">ติดต่อเรา</a></li>
+          <li><a href="#timetable">ตารางสอน</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+
+    <section id="about">
+      <style>
+      .profile-grid{
+      display:grid;
+      grid-template-columns:180px 1fr;
+      gap:24px;
+      align-items:start;
+      }
+
+      .avatar{
+      width:180px;
+      height:180px;
+      border-radius:12px;
+      background:#eee;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      overflow:hidden;
+      }
+
+      dl{
+      display:grid;
+      grid-template-columns:150px 1fr;
+      gap:12px 24px;
+      }
+
+      dt{
+      font-weight:700;
+      color:var(--muted);
+      padding-top:8px;
+      }
+
+      dd{
+      margin:0;
+      padding:8px 0;
+      line-height:1.7;
+      }
+
+      .tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      align-items:center;
+      }
+
+      .tags .tag {
+      background: #fbfdff;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid #eef6ff;
+      cursor:pointer;
+      transition: transform .08s, filter .12s;
+      user-select:none;
+      font-size:14px;
+      }
+
+      /* Subtle hover but not jumpy; make 20% darker on hover */
+      .tags .tag:hover {
+      transform:translateY(-2px);
+      filter: brightness(0.8);
+      }
+
+      /* Give the whole section breathing room */
+      #about { padding:18px; }
+
+      /* Mobile: stack and shrink avatar */
+      @media (max-width:720px){
+      .profile-grid{ grid-template-columns:1fr; gap:18px; }
+      .avatar{ width:140px; height:140px; margin:0 auto; }
+      dl{ grid-template-columns:120px 1fr; gap:10px 16px; }
+      .tags .tag{ font-size:13px; padding:6px 8px; }
+      }
+      </style>
+
+      <h2>ประวัติส่วนตัว</h2>
+      <div class="profile-grid">
+      <div class="avatar" aria-hidden="true">
+      <img src="https://picsum.photos/seed/ther/600/600" alt="Avatar of ชยางกูร" loading="lazy" />
+      </div>
+      <div>
+      <dl>
+      <div> 
+        <dt>ชื่อ-สกุล</dt>
+        <dd>ชยางกูร เชื้อเจริญ</dd>
+      </div>
+      <div>
+        <dt>การศึกษา</dt>
+        <dd>จบ ป.6, จบ ม.3, กำลังศึกษาอยู่ ม.5 (โรงเรียนบางปะกอกวิทยาคม)</dd>
+      </div>
+      <div>
+        <dt>อาหารที่ชอบ</dt>
+        <dd class="tags">
+        <span class="tag">ข้าวผัด</span>
+        <span class="tag">ต้มยำกุ้ง</span>
+        <span class="tag">ซูชิ</span>
+        <span class="tag">พิซซ่า</span>
+        <span class="tag">ผลไม้ตามฤดูกาล</span>
+        </dd>
+      </div>
+      <div>
+        <dt>ไม่ชอบ</dt>
+        <dd class="tags">
+        <span class="tag">หอมแดงดิบ</span>
+        <span class="tag">ปลาร้า</span>
+        <span class="tag">อาหารรสจัดเกิน</span>
+        </dd>
+      </div>
+      <div>
+        <dt>ทำไมเลือกเรียนสาขาเทคโนโลยี</dt>
+        <dd class="tags">
+        <span class="tag">ชอบแก้ปัญหาและคิดเป็นระบบ</span>
+        <span class="tag">เห็นอนาคตและโอกาสงาน</span>
+        <span class="tag">อยากสร้างแอป/เกม</span>
+        <span class="tag">ชอบทดลองเครื่องมือใหม่</span>
+        </dd>
+      </div>
+      <div>
+        <dt>ความรู้พื้นฐาน</dt>
+        <dd class="tags">
+        <span class="tag">HTML / CSS</span>
+        <span class="tag">DOM เบื้องต้น</span>
+        <span class="tag">JavaScript เบื้องต้น</span>
+        <span class="tag">Git เบื้องต้น</span>
+        </dd>
+      </div>
+      <div>
+        <dt>อยากศึกษาต่อ</dt>
+        <dd class="tags">
+        <span class="tag">วิศวกรรมคอมพิวเตอร์</span>
+        <span class="tag">วิทยาการคอมพิวเตอร์</span>
+        <span class="tag">เทคโนโลยีสารสนเทศ</span>
+        <span class="tag">สาขาเกม & ดิจิทัล</span>
+        </dd>
+      </div>
+      </dl>
+      </div>
+      </div>
+    </section>
+
+    <section id="gallery">
+      <style>
+.gallery img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+</style>
+
+      <h2 style="text-align: center;">คลังรูปภาพ</h2>
+      <div class="gallery" aria-live="polite">
+        <img loading="lazy" src="https://picsum.photos/seed/1/800/600" alt="Gallery 1" tabindex="0" />
+        <img loading="lazy" src="https://picsum.photos/seed/2/800/600" alt="Gallery 2" tabindex="0" />
+        <img loading="lazy" src="https://picsum.photos/seed/3/800/600" alt="Gallery 3" tabindex="0" />
+        <img loading="lazy" src="https://picsum.photos/seed/4/800/600" alt="Gallery 4" tabindex="0" />
+        <img loading="lazy" src="https://picsum.photos/seed/5/800/600" alt="Gallery 5" tabindex="0" />
+        <img loading="lazy" src="https://picsum.photos/seed/6/800/600" alt="Gallery 6" tabindex="0" />
+        <img loading="lazy" src="https://picsum.photos/seed/7/800/600" alt="Gallery 7" tabindex="0" />
+        <img loading="lazy" src="https://picsum.photos/seed/8/800/600" alt="Gallery 8" tabindex="0" />
+      </div>
+      <style>
+#lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 9999;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease-in-out;
+}
+
+#lightbox.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#lb-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+#lb-img {
+  max-width: 90%;
+  max-height: 85%;
+  border-radius: 8px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+  transition: transform 0.4s ease-in-out;
+}
+
+#lightbox.show #lb-img {
+  transform: scale(1);
+}
+
+#lb-img {
+  transform: scale(0.8);
+}
+
+      </style>
+      <div id="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+        <button id="lb-close" aria-label="ปิด">&times;</button>
+        <img id="lb-img" src="" alt="ขยายรูป" />
+      </div>
+
+<script>
+(function(){
+  const header = document.querySelector('header');
+  const headerHeight = header ? header.offsetHeight : 0;
+
+  const imgs = document.querySelectorAll('.gallery img');
+  const lightbox = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lb-img');
+  const lbClose = document.getElementById('lb-close');
+
+  const navToggle = document.getElementById('nav-toggle');
+  const mainNav = document.getElementById('main-nav');
+
+  let lastFocused = null;
+
+  function openLightbox(src, alt){
+    lastFocused = document.activeElement;
+    lbImg.src = src;
+    lbImg.alt = alt || 'ขยายรูป';
+    lightbox.classList.add('show');
+    lightbox.setAttribute('aria-hidden','false');
+    lbClose.focus();
+  }
+
+  function closeLightbox(){
+    lightbox.classList.remove('show');
+    lightbox.setAttribute('aria-hidden','true');
+    lbImg.src = '';
+    if(lastFocused && typeof lastFocused.focus === 'function'){
+      lastFocused.focus();
+    }
+  }
+
+  imgs.forEach(img=>{
+    img.style.cursor = 'zoom-in';
+    img.addEventListener('click', e=> openLightbox(e.currentTarget.src, e.currentTarget.alt));
+    img.addEventListener('keydown', e=> {
+      if(e.key === 'Enter' || e.key === ' ') { 
+        e.preventDefault(); 
+        openLightbox(e.currentTarget.src, e.currentTarget.alt); 
+      }
+    });
+  });
+
+  lbClose.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', e=>{
+    if(e.target === lightbox) closeLightbox();
+  });
+  document.addEventListener('keydown', e=>{
+    if(e.key === 'Escape' && lightbox.classList.contains('show')) closeLightbox();
+  });
+
+  // Nav toggle behavior
+  if(navToggle && mainNav){
+    navToggle.addEventListener('click', ()=>{
+      const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', String(!expanded));
+      mainNav.classList.toggle('show');
+    });
+
+    // Close nav when link clicked (mobile)
+    mainNav.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if(!target) return;
+
+        if(mainNav.classList.contains('show')){
+          mainNav.classList.remove('show');
+          navToggle.setAttribute('aria-expanded','false');
+        }
+
+        if(target.id === 'about' || target.id === 'timetable'){
+          const topPos = target.getBoundingClientRect().top + window.scrollY - headerHeight;
+          window.scrollTo({top: topPos, behavior:'smooth'});
+        } else {
+          target.scrollIntoView({behavior: 'smooth', block: 'center'});
+        }
+      });
+    });
+  } else {
+    document.querySelectorAll('nav.navbar a[href^="#"]').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if(!target) return;
+        if(target.id === 'about' || target.id === 'timetable'){
+          const topPos = target.getBoundingClientRect().top + window.scrollY - headerHeight;
+          window.scrollTo({top: topPos, behavior:'smooth'});
+        } else {
+          target.scrollIntoView({behavior: 'smooth', block: 'center'});
+        }
+      });
+    });
+  }
+})();
+</script>
+
+
+    </section>
+
+
+<section id="contact">
+  <style>
+.contact-item img {
+  width: 80px;
+  height: 80px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.contact-item img:hover {
+  transform: scale(1.2);
+}
+</style>
+
+  <h2>ติดต่อเรา</h2>
+  
+  <div class="contact-container">
+    
+<div class="contact-item">
+  <a href="#" onclick="copyPhone(event)">
+    <img src="https://cdn-icons-png.flaticon.com/512/597/597177.png" alt="phone" />
+  </a>
+  <p>โทรศัพท์ : 0901880046</p>
+
+
+<script>
+function copyPhone(event) {
+  event.preventDefault();
+  const phoneNumber = "0901880046";
+  navigator.clipboard.writeText(phoneNumber).then(() => {
+    alert("คัดลอกเบอร์โทรเรียบร้อยแล้ว: " + phoneNumber);
+  }).catch(err => {
+    console.error("คัดลอกไม่สำเร็จ:", err);
+  });
+}
+</script>
+</div>
+
+
+    <div class="contact-item">
+      <a href="https://www.facebook.com/ChayangkulChueacharoen/"><img src="https://cdn-icons-png.flaticon.com/512/145/145802.png" alt="facebook" /></a>
+      <p>Facebook : ชยางกูร เชื้อเจริญ </p>
+    </div>
+
+    <div class="contact-item">
+      <a href="https://www.instagram.com/sssnnh__/"> <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="instagram" /></a>
+      <p>Instagram : sssnnh_</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  #contact {
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  .contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-top: 20px;
+  }
+
+  .contact-item {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    gap: 8px;
+  }
+
+  .contact-item img {
+    width: 80px;
+    height: 80px;
+  }
+</style>
+
+
+<section id="timetable">
+  <h2 style="text-align: center;">ตารางการสอน - ชั้น ม.5/8</h2>
+  <div style="width: 100%; max-width: 1000px; margin: auto; background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 6px 20px rgba(0,0,0,0.065);">
+    <iframe 
+      src="https://drive.google.com/file/d/1xFVomuq4mb49wdpAE-84FY9fA3PyrBjc/preview" 
+      style="width:100%; height:80vh; border:none;">
+    </iframe>
+  </div>
+</section>
+  </main>
+
+  <footer>
+    ผู้พัฒนา : นาย ชยางกูร เชื้อเจริญ  
+  </footer>
+</body>
+</html>
