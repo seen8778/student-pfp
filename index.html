@@ -1,696 +1,843 @@
 <!doctype html>
 <html lang="th">
 <head>
-  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Chayangkul Chueajaroen</title>
-  <style>
-    html {scroll-behavior: smooth;}
-    :root{--accent:#1565c0;--muted:#666}
-    *{box-sizing:border-box}
-    body{font-family: prompt, -apple-system, "Segoe UI", Roboto, "Noto Sans Thai", sans-serif;margin:0;color:#222;line-height:1.45}
-    header {
-  background: linear-gradient(90deg, var(--accent), #4a90e2);
-  color: #fff;
-  padding: 14px 20px;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-    .container{max-width:1000px;margin:18px auto;padding:0 16px}
-    nav.navbar{display:flex;gap:12px;align-items:center}
-    nav.navbar .brand{font-weight:700;font-size:18px}
-    nav.navbar ul{list-style:none;display:flex;gap:10px;margin:0;padding:0;margin-left:auto}
-    nav.navbar a{color:inherit;text-decoration:none;padding:8px 10px;border-radius:8px}
-    nav.navbar a:hover{background:rgba(255,255,255,0.12)}
-    section{background:#fff;margin-bottom:18px;padding:18px;border-radius:10px;box-shadow:0 6px 20px rgba(0,0,0,0.065)}
-    .profile-grid{display:grid;grid-template-columns:220px 1fr;gap:18px}
-    .avatar{width:220px;height:220px;border-radius:10px;background:#eee;display:flex;align-items:center;justify-content:center;overflow:hidden}
-    .avatar img{width:100%;height:100%;object-fit:cover}
-    h2{margin:0 0 12px}
-    dl{display:grid;grid-template-columns:160px 1fr;gap:8px 18px}
-    dt{font-weight:700;color:var(--muted)}
-    .tags{display:flex;flex-wrap:wrap;gap:8px}
-    .tag{background:#f1f5fb;padding:6px 10px;border-radius:8px;border:1px solid #e6eefc}
-    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px}
-    .gallery img{width:100%;height:120px;object-fit:cover;border-radius:8px}
-    table{width:100%;border-collapse:collapse}
-    th,td{padding:8px;border:1px solid #eee;text-align:center}
-    footer{background:#111;color:#fff;padding:12px 16px;text-align:center;border-top:4px solid rgba(255,255,255,0.04)}
-    @media(max-width: 620px){.contact-container { flex-direction: column; gap: 20px; }
-}
+    <link rel="icon" type="image/png" sizes="32x32" href="https://lh3.googleusercontent.com/rd-d/ALs6j_GHmRbZDNhh1A7jWAWGhN_nIzfEfApcV924tT6NvVZ5LKXmf-4xTIpZI-lgWO1M-hHd0T2ObMSD73T8wDTN0nSlus0YbhHkvrrmLyPM13DoffcqBYKQsEXoT_RO3G3VBrtt6BJ5LNeqoirFyr-3BdOUe_9T7HjPoK03Cmt7-DUEdHe_FvN0NMWw-Ro_4qWx-z1CD2x8qhwmVlN1YkUChxdKLfia2M0auFhG2kdKRXnPKv66bfiEaI3vFSk4Z7xAi13fUATYUdJz6xC_8kuvH1d23zH7yDqU7lOn7E9Iw93bAxNYTXfzCt6fzAflJ41b0B30Ykyyb98X_XSSTopGPCSubb0Xqa73ghQGsBylfjPx13X8hYhVMd9g9e5uD1pBvurWsjKHHG022vyOvhVUvBhMgBXjXHSWH9ITv0vWpRpzIFN6eZ-Zl14Ec-c68rktOAMm74D7FCS-Bd0MOSnC--K9WNLidQdjV_fNFfFvvuCUTAyQEJJhv40WsgMeHczURMmL9Ghm4n2BSf8mQ9eQDODbUjIjOtw3liFlO24OIclMnxq9GzDD7sQpgyvSruAEgNEDNj0hbc4CWpWFih_caS09qv1Cg9Ixq5zQT-vIFgbDULtNEkvZTjI1aTr-GeGeMqqLnjSCBPu5zIdYqafq1GkKz8hnuvHeOWVMjbHAhPYCL0kEWkwOfX_g7kqavBIblbtlGAfJ2DEAUsv1YM-90CYsz_rXV7XoI-0AcGlBHyJNqCeDxymajqdQWkkVyd3QufxUtyD8mfrhAe5hgrRqR7gEiuRGm5Z9gQJH618kLWf7mtsWxv5GudEYW-at_NSvpZha5xJdhcqGyN_e3oGU3ed24qSCme2fAjdPxgxTfD6XnAVcg42c2QgMIctDtqZ23Y1MBB9I69w8hoEWbp1gdhmeReRGpxkPLIF_pXXwEZAmD2Olwe45knUKK5nVTrfmbqt9rmoGts3NYNu5LKmgHGyrF7oxLBk7I1GkOEVKLEu2S5enKQXzCBGn-j0MTrS-Kx8gSaBzpWeogmtDEHcmHXlhucQvS06OtN-oSwaDLDqdMnOKEXCUqpdt0AqvshHyNwwsjmV-ij0D52pn5g=w1220-h824?auditContext=thumbnail&auditContext=forDisplay" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chayangkun Chueajaroen</title>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --accent: #1565c0;
+            --muted: #666;
+            --bg: #f7f7f7;
+            --text: #222;
+            --section-bg: #fff;
+            --card-bg: #fff;
+            --table-border: #e6e6e6;
+            --table-head: #f0f0f0;
+        }
 
- 
-    .skip-link{position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden}
-    .skip-link:focus{left:16px;top:16px;width:auto;height:auto;padding:8px 12px;background:#000;color:#fff;border-radius:6px;z-index:1200}
+        html {
+            scroll-behavior: smooth;
+        }
 
+        * {
+            box-sizing: border-box;
+        }
 
-    :focus{outline: none}
-    :focus-visible{outline:3px solid #ffd54f;outline-offset:3px}
+        body {
+            font-family: 'Prompt', -apple-system, "Segoe UI", Roboto, "Noto Sans Thai", sans-serif;
+            margin: 0;
+            color: #222;
+            line-height: 1.45;
+        }
 
+        .container {
+            max-width: 1000px;
+            margin: 18px auto;
+            padding: 0 16px;
+            position: relative;
+        }
 
-    .nav-toggle{display:none;background:transparent;border:none;color:inherit;font-size:22px;padding:6px 8px;border-radius:8px}
-    @media(max-width:780px){
-      nav.navbar{align-items:center}
-      .nav-toggle{display:inline-flex}
-      nav.navbar ul{position:absolute;right:16px;top:64px;background:linear-gradient(180deg,rgba(255,255,255,0.98),#fff);flex-direction:column;padding:12px;border-radius:8px;box-shadow:0 8px 30px rgba(0,0,0,0.08);display:none}
-      nav.navbar ul.show{display:flex}
-      nav.navbar ul li{margin:6px 0}
-    }
-  </style>
+        h2 {
+            margin: 0 0 12px;
+        }
+
+        a.skip-link {
+            position: absolute;
+            left: -999px;
+            top: auto;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+        }
+
+        a.skip-link:focus {
+            left: 16px;
+            top: 16px;
+            width: auto;
+            height: auto;
+            padding: 8px 12px;
+            background: #000;
+            color: #fff;
+            border-radius: 6px;
+            z-index: 1200;
+        }
+
+        :focus {
+            outline: none;
+        }
+
+        :focus-visible {
+            outline: 3px solid #ffd54f;
+            outline-offset: 3px;
+        }
+
+        header {
+            background: linear-gradient(90deg, var(--accent), #4a90e2);
+            color: #fff;
+            padding: 14px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav.navbar {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        nav.navbar .brand {
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        nav.navbar ul {
+            list-style: none;
+            display: flex;
+            gap: 10px;
+            margin: 0;
+            padding: 0;
+            margin-left: auto;
+        }
+
+        nav.navbar a {
+            color: inherit;
+            text-decoration: none;
+            padding: 8px 10px;
+            border-radius: 8px;
+        }
+
+        nav.navbar a:hover {
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        .nav-toggle {
+            display: none;
+            background: transparent;
+            border: none;
+            color: inherit;
+            font-size: 22px;
+            padding: 6px 8px;
+            border-radius: 8px;
+        }
+        #nav-toggle {
+            position: absolute;
+            right: 12px;
+            top: 1;
+            z-index: 1201;
+        }
+
+        #theme-toggle{
+            position: absolute;
+            right: 52px;
+            top: 12px;
+            z-index: 1201;
+        }
+        .nav-toggle, #theme-toggle {
+            cursor: pointer;
+            transition: transform .12s ease, background .14s ease, box-shadow .14s ease;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .nav-toggle:hover, #theme-toggle:hover {
+            transform: translateY(-2px);
+            background: rgba(255,255,255,0.08);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+        }
+
+        .nav-toggle:active, #theme-toggle:active {
+            transform: translateY(0);
+            box-shadow: none;
+        }
+
+        .nav-toggle:focus, #theme-toggle:focus {
+            outline: 3px solid rgba(255,215,79,0.22);
+            outline-offset: 3px;
+        }
+        section {
+            background: #fff;
+            margin-bottom: 18px;
+            padding: 18px;
+            border-radius: 10px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.065);
+        }
+        #about {
+            padding: 18px;
+        }
+
+        .profile-grid {
+            display: grid;
+            grid-template-columns: 180px 1fr;
+            gap: 24px;
+            align-items: start;
+        }
+
+        .avatar {
+            width: 180px;
+            height: 180px;
+            border-radius: 12px;
+            background: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        dl {
+            display: grid;
+            grid-template-columns: 150px 1fr;
+            gap: 12px 24px;
+        }
+
+        dt {
+            font-weight: 700;
+            color: var(--muted);
+            padding-top: 8px;
+        }
+
+        dd {
+            margin: 0;
+            padding: 8px 0;
+            line-height: 1.7;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .tags .tag {
+            background: #fbfdff;
+            padding: 6px 10px;
+            border-radius: 999px;
+            border: 1px solid #eef6ff;
+            cursor: pointer;
+            transition: transform .08s, filter .12s;
+            user-select: none;
+            font-size: 14px;
+        }
+
+        .tags .tag:hover {
+            transform: translateY(-2px);
+            filter: brightness(0.8);
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        #lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            z-index: 9999;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease-in-out;
+        }
+
+        #lightbox.show {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        #lb-close {
+            position: absolute;
+            top: 18px;
+            right: 18px;
+            background: transparent;
+            border: none;
+            color: #fff;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        #lb-img {
+            max-width: 90%;
+            max-height: 85%;
+            border-radius: 8px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+            transition: transform 0.4s ease-in-out;
+            transform: scale(0.8);
+        }
+
+        #lightbox.show #lb-img {
+            transform: scale(1);
+        }
+
+        #contact {
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .contact-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .contact-item img {
+            width: 80px;
+            height: 80px;
+            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        .contact-item img:hover {
+            transform: scale(1.2);
+        }
+
+        .contact-item p {
+            cursor: pointer;
+            user-select: text;
+            display: inline-block;
+            margin-top: 10px;
+            padding: 5px 10px;
+            border-radius: 6px;
+            background-color: #f0f0f0;
+            transition: background-color 0.2s;
+        }
+
+        .contact-item p:hover {
+            background-color: #ddd;
+        }
+
+        #timetable {
+            max-width: 100%;
+            padding: 20px;
+            font-size: 10px;
+            border: 1px solid #ccc;
+            overflow-x: auto;
+        }
+
+        #timetable table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed;
+            min-width: 800px;
+        }
+
+        #timetable th,
+        #timetable td {
+            border: 1px solid #ccc;
+            padding: 4px 5px;
+            text-align: center;
+            vertical-align: middle;
+            white-space: normal;
+            word-break: break-word;
+            line-height: 1.5;
+            background-color: #fff;
+        }
+
+        #timetable th {
+            background-color: #f0f0f0;
+            position: sticky;
+            top: 0;
+            z-index: 2;
+        }
+
+        #timetable tbody tr:first-child td {
+            background-color: #f3f3f3;
+        }
+
+        #timetable table tr:hover td {
+            background-color: rgba(0, 0, 0, 0.05);
+            transition: background-color 0.3s ease;
+        }
+        footer {
+            background: #111;
+            color: #fff;
+            padding: 12px 16px;
+            text-align: center;
+            border-top: 4px solid rgba(255, 255, 255, 0.04);
+        }
+        @media(max-width: 780px){
+            .gallery{grid-template-columns:repeat(2,1fr)}
+            nav.navbar{align-items:center}
+            .nav-toggle{display:inline-flex}
+            nav.navbar ul{
+                position:absolute;
+                right:16px;
+                top:64px;
+                background:var(--section-bg, #fff);
+                flex-direction:column;
+                padding:8px;
+                border-radius:8px;
+                box-shadow:0 8px 30px rgba(0,0,0,0.08);
+                z-index:1100;
+                display:flex;
+                visibility:hidden;
+                opacity:0;
+                transform:translateY(-8px);
+                pointer-events:none;
+                transition:opacity .22s ease, transform .22s ease, visibility .01s linear .22s;
+                will-change: opacity, transform;
+            }
+
+            nav.navbar ul.show{
+                visibility:visible;
+                opacity:1;
+                transform:translateY(0);
+                pointer-events:auto;
+                transition-delay: 0s;
+            }
+
+            nav.navbar ul li{margin:6px 0}
+            nav.navbar ul a{color:var(--text, #222);display:block;padding:8px 12px}
+            nav.navbar.slide-from-bottom ul{ transform: translateY(8px); }
+            nav.navbar.slide-from-bottom ul.show{ transform: translateY(0); }
+        }
+
+        @media (max-width: 720px) {
+            .profile-grid {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+            .avatar {
+                width: 140px;
+                height: 140px;
+                margin: 0 auto;
+            }
+            dl {
+                grid-template-columns: 120px 1fr;
+                gap: 10px 16px;
+            }
+            .tags .tag {
+                font-size: 13px;
+                padding: 6px 8px;
+            }
+        }
+
+        @media (max-width: 620px) {
+            .contact-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    </style>
 </head>
+
 <body>
-  <a class="skip-link" href="#main">ข้ามไปยังเนื้อหา</a>
-  <header>
-    <div class="container">
-      <nav class="navbar" role="navigation" aria-label="Main navigation">
-        <div class="brand">Student Information</div>
-        <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="เมนูหลัก">☰</button>
-        <ul id="main-nav">
-          <li><a href="#about">ประวัติส่วนตัว</a></li>
-          <li><a href="#gallery">คลังรูปภาพ</a></li>
-          <li><a href="#contact">ติดต่อเรา</a></li>
-          <li><a href="#timetable">ตารางสอน</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+    <a class="skip-link" href="#main">ข้ามไปยังเนื้อหา</a>
 
-  <main id="main" class="container">
+    <header>
+        <div class="container">
+            <nav class="navbar" role="navigation" aria-label="Main navigation">
+                <a class="brand" href="#about">Student Information</a>
+                <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="เมนูหลัก">☰</button>
+                <ul id="main-nav">
+                    <li><a href="#about">ประวัติส่วนตัว</a></li>
+                    <li><a href="#gallery">คลังรูปภาพ</a></li>
+                    <li><a href="#contact">ติดต่อเรา</a></li>
+                    <li><a href="#timetable">ตารางสอน</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-    <section id="about">
-      <style>
-      .profile-grid{
-      display:grid;
-      grid-template-columns:180px 1fr;
-      gap:24px;
-      align-items:start;
-      }
+    <main id="main" class="container">
 
-      .avatar{
-      width:180px;
-      height:180px;
-      border-radius:12px;
-      background:#eee;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      overflow:hidden;
-      }
+        <section id="about">
+            <h2>ประวัติส่วนตัว</h2>
+            <div class="profile-grid">
+                <div class="avatar" aria-hidden="true">
+                    <img src="https://lh3.googleusercontent.com/rd-d/ALs6j_FLpa1gqZMvmul9C_T8DhsgK5zoQSWUrsmnRt-E5ZLW-FIJvwE5KNEsMirKfvv1tkpcI7-a1BWgOf2RQ5aLtStwqoL3cEcMe3ofybjV02QIL2RZGCWXZsA8FTDYd3iMG1J7uBmJYmHSXw2N__HtuukL6-_JNZlat-di7sPdNvwUYUrp3sSQHJJST9Gur8RAc-PHST_O1FghKidu0a9kqvVJUy8Dtq2oKQ_lt4v6xy24CqEy2O1w_TkvU7t_kKAkUINIkfE5iUuESPkCdZf9YoPbo8rrrSBWpAyABkoWFyqAITUCAjeq4EFVGPaeHIrEV2AjfTYXq4faKkCts8AVtYh2ibMCzQFnFcVULvPyVnLUaHO08jxoPJzy-bQq_pcOWlfxp9B1YQ2HWTi-OKNXqVxJUS-Ay89UxJJujo9TjluG43VJnkZ8HVc1rke6aHUxiJAStmK4aduxjZ-dANNr28-UtEMtIEUteKpMoOX99T-55VuWzbjC8b872QVvVK3QCrnBIFve-fvGTkrZ_M3JmREQinoHrag_gKO_EjVJE_iySlmpvfhZAnqsVKxCKn-7nqdI0PO1rvEpmWx9wymdKX4rlNJnW1tIVcBt0_m4e3MhQXzyls8nFhH5GDxYgkTlhzaiWMKOnmELDwg-ZmB2eC385bMtj1srmw3xEgYoKjv8165zUUG3N03l6ArCYkGd0zULJD-sA5StnVsjdXEZLIqzsugJWubxpb8JGNChv2bR2Tw4Hd7iXKrFBc3ZeA2bNN7jCGanc44lNN5TU6s4xvTEJdjxuKxjFmm_-k4y7m5Ss4cX-elqB4ljWpUpOjLx0hS_BTABbgzTaHDS0CjAtgBpg_iT3dISbJq6qaI_e1KBuzk9ctY9ooSIk0RO-zxvwCrlXS6-sZzbxnkoiZd_Aul0byfZizJZhsQV4-69WPms-Tv8Hqy44xRF3t3QNbtLkOAyDfSjnwj_VfK6yRol28uUwZk-DhdIr8SmrmsWqjZt8qC5t5SHleTyG4XHQoY75HWcEYU1z4TveayLosq-zQ_2A2EG30sK1Tt_Ssjpmyctfp7gZHuLelVrmB3A9w5-Hz13hrbeFm21WWT6pA=w1314-h824?auditContext=thumbnail&auditContext=forDisplay" alt="รูปของเรา" loading="lazy" />
+                </div>
+                <div>
+                    <dl>
+                        <div>
+                            <dt>ชื่อ-สกุล</dt>
+                            <dd>ชยางกูร เชื้อเจริญ</dd>
+                        </div>
+                        <div>
+                            <dt>การศึกษา</dt>
+                            <dd>จบ ป.6, จบ ม.3, กำลังศึกษาอยู่ ม.5 (โรงเรียนบางปะกอกวิทยาคม)</dd>
+                        </div>
+                        <div>
+                            <dt>อาหารที่ชอบ</dt>
+                            <dd class="tags">
+                                <span class="tag">ข้าวผัด</span>
+                                <span class="tag">ต้มยำกุ้ง</span>
+                                <span class="tag">ซูชิ</span>
+                                <span class="tag">พิซซ่า</span>
+                                <span class="tag">ผลไม้ตามฤดูกาล</span>
+                            </dd>
+                        </div>
+                        <div>
+                            <dt>ไม่ชอบ</dt>
+                            <dd class="tags">
+                                <span class="tag">หอมแดงดิบ</span>
+                                <span class="tag">ปลาร้า</span>
+                                <span class="tag">อาหารรสจัดเกิน</span>
+                            </dd>
+                        </div>
+                        <div>
+                            <dt>ทำไมเลือกเรียนสาขาเทคโนโลยี</dt>
+                            <dd class="tags">
+                                <span class="tag">ชอบแก้ปัญหาและคิดเป็นระบบ</span>
+                                <span class="tag">เห็นอนาคตและโอกาสงาน</span>
+                                <span class="tag">อยากสร้างแอป/เกม</span>
+                                <span class="tag">ชอบทดลองเครื่องมือใหม่</span>
+                            </dd>
+                        </div>
+                        <div>
+                            <dt>ความรู้พื้นฐาน</dt>
+                            <dd class="tags">
+                                <span class="tag">HTML / CSS</span>
+                                <span class="tag">DOM เบื้องต้น</span>
+                                <span class="tag">JavaScript เบื้องต้น</span>
+                                <span class="tag">Git เบื้องต้น</span>
+                            </dd>
+                        </div>
+                        <div>
+                            <dt>อยากศึกษาต่อ</dt>
+                            <dd class="tags">
+                                <span class="tag">วิศวกรรมคอมพิวเตอร์</span>
+                                <span class="tag">วิทยาการคอมพิวเตอร์</span>
+                                <span class="tag">เทคโนโลยีสารสนเทศ</span>
+                                <span class="tag">สาขาเกม & ดิจิทัล</span>
+                            </dd>
+                        </div>
+                    </dl>
+                </div>
+            </div>
+        </section>
 
-      dl{
-      display:grid;
-      grid-template-columns:150px 1fr;
-      gap:12px 24px;
-      }
+        <section id="gallery">
+            <h2 style="text-align: center;">คลังรูปภาพ</h2>
+            <div class="gallery" aria-live="polite">
+                <img loading="lazy" src="https://picsum.photos/seed/1/800/600" alt="Gallery 1" tabindex="0" />
+                <img loading="lazy" src="https://picsum.photos/seed/2/800/600" alt="Gallery 2" tabindex="0" />
+                <img loading="lazy" src="https://picsum.photos/seed/3/800/600" alt="Gallery 3" tabindex="0" />
+                <img loading="lazy" src="https://picsum.photos/seed/4/800/600" alt="Gallery 4" tabindex="0" />
+                <img loading="lazy" src="https://picsum.photos/seed/5/800/600" alt="Gallery 5" tabindex="0" />
+                <img loading="lazy" src="https://picsum.photos/seed/6/800/600" alt="Gallery 6" tabindex="0" />
+                <img loading="lazy" src="https://picsum.photos/seed/7/800/600" alt="Gallery 7" tabindex="0" />
+                <img loading="lazy" src="https://picsum.photos/seed/8/800/600" alt="Gallery 8" tabindex="0" />
+            </div>
 
-      dt{
-      font-weight:700;
-      color:var(--muted);
-      padding-top:8px;
-      }
+            <div id="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+                <button id="lb-close" aria-label="ปิด">×</button>
+                <img id="lb-img" src="" alt="ขยายรูป" />
+            </div>
+        </section>
 
-      dd{
-      margin:0;
-      padding:8px 0;
-      line-height:1.7;
-      }
+        <section id="contact">
+            <h2>ติดต่อเรา</h2>
+            <div class="contact-container">
+                <div class="contact-item">
+                    <a href="#" onclick="copyPhone(event)">
+                        <img src="https://cdn-icons-png.flaticon.com/512/597/597177.png" alt="phone" />
+                    </a>
+                    <p onclick="copyPhone(event)">โทรศัพท์ : 0901880046</p>
+                </div>
 
-      .tags{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      align-items:center;
-      }
+                <div class="contact-item">
+                    <a href="https://www.facebook.com/ChayangkulChueacharoen/">
+                        <img src="https://cdn-icons-png.flaticon.com/512/145/145802.png" alt="facebook" />
+                    </a>
+                    <p onclick="copyText('ชยางกูร เชื้อเจริญ')">Facebook : ชยางกูร เชื้อเจริญ</p>
+                </div>
 
-      .tags .tag {
-      background: #fbfdff;
-      padding:6px 10px;
-      border-radius:999px;
-      border:1px solid #eef6ff;
-      cursor:pointer;
-      transition: transform .08s, filter .12s;
-      user-select:none;
-      font-size:14px;
-      }
+                <div class="contact-item">
+                    <a href="https://www.instagram.com/sssnnh__/">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="instagram" />
+                    </a>
+                    <p onclick="copyText('sssnnh__')">Instagram : sssnnh_</p>
+                </div>
+            </div>
+        </section>
 
-     
-      .tags .tag:hover {
-      transform:translateY(-2px);
-      filter: brightness(0.8);
-      }
+        <section id="timetable">
+            <h2 style="text-align: center;">ตารางเรียนของฉัน</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>วัน / คาบ</th>
+                        <th>0</th>
+                        <th>1</th>
+                        <th>2</th>
+                        <th>3</th>
+                        <th>4</th>
+                        <th>5</th>
+                        <th>6</th>
+                        <th>7</th>
+                        <th>8</th>
+                        <th>9</th>
+                        <th>10</th>
+                        <th>11</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>เวลา</th>
+                        <td>07.30-08.20</td>
+                        <td>08.20-09.10</td>
+                        <td>09.10-10.00</td>
+                        <td>10.00-10.50</td>
+                        <td>10.50-11.40</td>
+                        <td>11.40-12.30</td>
+                        <td>12.30-13.20</td>
+                        <td>13.20-14.10</td>
+                        <td>14.10-15.00</td>
+                        <td>15.00-15.50</td>
+                        <td>15.50-16.40</td>
+                        <td>16.40-17.30</td>
+                    </tr>
+                    <tr>
+                        <th>จันทร์</th>
+                        <td>โฮมรูม<br>ครู<br>ที่ปรึกษา</td>
+                        <td>ค32202<br>ครูภัทรานี<br>215</td>
+                        <td>ก32905<br>ครูติณณภพ<br>ห้องพวงคราม</td>
+                        <td>ว32224<br>ครูศุภณัฐ<br>922</td>
+                        <td>ว32224<br>ครูศุภณัฐ<br>922</td>
+                        <td>อ32232<br>ครูเพ็ญศิริ<br>434</td>
+                        <td>พัก<br>กลาง<br>วัน</td>
+                        <td>อ32102<br>ครูสหภาพ<br>241</td>
+                        <td>ว32204<br>ครูรสสุคนธ์<br>941</td>
+                        <td>ท32102<br>ครูนุชสุคนธ์<br>225</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>อังคาร</th>
+                        <td>โฮมรูม<br>ครู<br>ที่ปรึกษา</td>
+                        <td>ค32102<br>ครูอนุทิน<br>131</td>
+                        <td>อ32102<br>ครู Ville<br>335</td>
+                        <td>อาเซียน<br>เสรีภาษา</td>
+                        <td>ว32204<br>ครูรสสุคนธ์<br>941</td>
+                        <td>ว32244<br>ครูณัฐญาดา<br>932</td>
+                        <td>พัก<br>กลาง<br>วัน</td>
+                        <td>ส32103<br>ครูพิราวรรณ<br>433</td>
+                        <td>ค32202<br>ครูภัทรานี<br>215</td>
+                        <td>ส่งเสริมวิชาการ<br>126</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>พุธ</th>
+                        <td>โฮมรูม<br>ครู<br>ที่ปรึกษา</td>
+                        <td>ว32244<br>ครูณัฐญาดา<br>931</td>
+                        <td>ว32244<br>ครูณัฐญาดา<br>931</td>
+                        <td>อ32232<br>ครูเพ็ญศิริ<br>434</td>
+                        <td>ท32102<br>ครูนุชสุคนธ์<br>225</td>
+                        <td>ว32224<br>ครูศุภณัฐ<br>921</td>
+                        <td>พัก<br>กลาง<br>วัน</td>
+                        <td>ค32102<br>ครูอนุทิน</td>
+                        <td>ว32204<br>ครูรสสุคนธ์<br>941</td>
+                        <td>ว32204<br>ครูรสสุคนธ์<br>941</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>พฤหัสฯ</th>
+                        <td>ก32908<br>จิตอาสา<br>ที่ปรึกษา</td>
+                        <td>กิจกรรม<br>โรงเรียน<br>วิถีพุทธ</td>
+                        <td>ก32908<br>ประชุม<br>ระดับ</td>
+                        <td>ค32202<br>ครูภัทรานี<br>215</td>
+                        <td>ว32172<br>ครูพลากร<br>345</td>
+                        <td>ว32172<br>ครูพลากร<br>345</td>
+                        <td>พัก<br>กลาง<br>วัน</td>
+                        <td>ว30161<br>ครูลักษณ์อนง<br>932</td>
+                        <td>ว30161<br>ครูลักษณ์อนง<br>932</td>
+                        <td>IS<br>สายวิทย์<br>931</td>
+                        <td>IS<br>สายวิทย์<br>931</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>ศุกร์</th>
+                        <td>ผู้ดี<br>บางปะกอก<br>ส30226</td>
+                        <td>พ32102<br>ครูศรายุทธ<br>ส.วอลเลย์</td>
+                        <td>ศ32102<br>ครูจุฑามาศ<br>333</td>
+                        <td>ค32202<br>ครูภัทรานี<br>215</td>
+                        <td>อ32102<br>ครูสหภาพ<br>335</td>
+                        <td>ส32103<br>ครูพิราวรรณ<br>433</td>
+                        <td>พัก<br>กลาง<br>วัน</td>
+                        <td>ว30281<br>ครูธีระพงษ์<br>345</td>
+                        <td>ว30281<br>ครูธีระพงษ์<br>345</td>
+                        <td>กิจกรรม<br>กีฬา<br>คณะสี</td>
+                        <td>กิจกรรม<br>กีฬา<br>คณะสี</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
 
+    <footer>
+        ผู้พัฒนา : นาย ชยางกูร เชื้อเจริญ
+    </footer>
 
-      #about { padding:18px; }
-
-      @media (max-width:720px){
-      .profile-grid{ grid-template-columns:1fr; gap:18px; }
-      .avatar{ width:140px; height:140px; margin:0 auto; }
-      dl{ grid-template-columns:120px 1fr; gap:10px 16px; }
-      .tags .tag{ font-size:13px; padding:6px 8px; }
-      }
-      </style>
-
-      <h2>ประวัติส่วนตัว</h2>
-      <div class="profile-grid">
-      <div class="avatar" aria-hidden="true">
-      <img src="https://lh3.googleusercontent.com/rd-d/ALs6j_FLpa1gqZMvmul9C_T8DhsgK5zoQSWUrsmnRt-E5ZLW-FIJvwE5KNEsMirKfvv1tkpcI7-a1BWgOf2RQ5aLtStwqoL3cEcMe3ofybjV02QIL2RZGCWXZsA8FTDYd3iMG1J7uBmJYmHSXw2N__HtuukL6-_JNZlat-di7sPdNvwUYUrp3sSQHJJST9Gur8RAc-PHST_O1FghKidu0a9kqvVJUy8Dtq2oKQ_lt4v6xy24CqEy2O1w_TkvU7t_kKAkUINIkfE5iUuESPkCdZf9YoPbo8rrrSBWpAyABkoWFyqAITUCAjeq4EFVGPaeHIrEV2AjfTYXq4faKkCts8AVtYh2ibMCzQFnFcVULvPyVnLUaHO08jxoPJzy-bQq_pcOWlfxp9B1YQ2HWTi-OKNXqVxJUS-Ay89UxJJujo9TjluG43VJnkZ8HVc1rke6aHUxiJAStmK4aduxjZ-dANNr28-UtEMtIEUteKpMoOX99T-55VuWzbjC8b872QVvVK3QCrnBIFve-fvGTkrZ_M3JmREQinoHrag_gKO_EjVJE_iySlmpvfhZAnqsVKxCKn-7nqdI0PO1rvEpmWx9wymdKX4rlNJnW1tIVcBt0_m4e3MhQXzyls8nFhH5GDxYgkTlhzaiWMKOnmELDwg-ZmB2eC385bMtj1srmw3xEgYoKjv8165zUUG3N03l6ArCYkGd0zULJD-sA5StnVsjdXEZLIqzsugJWubxpb8JGNChv2bR2Tw4Hd7iXKrFBc3ZeA2bNN7jCGanc44lNN5TU6s4xvTEJdjxuKxjFmm_-k4y7m5Ss4cX-elqB4ljWpUpOjLx0hS_BTABbgzTaHDS0CjAtgBpg_iT3dISbJq6qaI_e1KBuzk9ctY9ooSIk0RO-zxvwCrlXS6-sZzbxnkoiZd_Aul0byfZizJZhsQV4-69WPms-Tv8Hqy44xRF3t3QNbtLkOAyDfSjnwj_VfK6yRol28uUwZk-DhdIr8SmrmsWqjZt8qC5t5SHleTyG4XHQoY75HWcEYU1z4TveayLosq-zQ_2A2EG30sK1Tt_Ssjpmyctfp7gZHuLelVrmB3A9w5-Hz13hrbeFm21WWT6pA=w1314-h824?auditContext=thumbnail&auditContext=forDisplay" alt="รูปของเรา" loading="lazy" />
-      </div>
-      <div>
-      <dl>
-      <div> 
-        <dt>ชื่อ-สกุล</dt>
-        <dd>ชยางกูร เชื้อเจริญ</dd>
-      </div>
-      <div>
-        <dt>การศึกษา</dt>
-        <dd>จบ ป.6, จบ ม.3, กำลังศึกษาอยู่ ม.5 (โรงเรียนบางปะกอกวิทยาคม)</dd>
-      </div>
-      <div>
-        <dt>อาหารที่ชอบ</dt>
-        <dd class="tags">
-        <span class="tag">ข้าวผัด</span>
-        <span class="tag">ต้มยำกุ้ง</span>
-        <span class="tag">ซูชิ</span>
-        <span class="tag">พิซซ่า</span>
-        <span class="tag">ผลไม้ตามฤดูกาล</span>
-        </dd>
-      </div>
-      <div>
-        <dt>ไม่ชอบ</dt>
-        <dd class="tags">
-        <span class="tag">หอมแดงดิบ</span>
-        <span class="tag">ปลาร้า</span>
-        <span class="tag">อาหารรสจัดเกิน</span>
-        </dd>
-      </div>
-      <div>
-        <dt>ทำไมเลือกเรียนสาขาเทคโนโลยี</dt>
-        <dd class="tags">
-        <span class="tag">ชอบแก้ปัญหาและคิดเป็นระบบ</span>
-        <span class="tag">เห็นอนาคตและโอกาสงาน</span>
-        <span class="tag">อยากสร้างแอป/เกม</span>
-        <span class="tag">ชอบทดลองเครื่องมือใหม่</span>
-        </dd>
-      </div>
-      <div>
-        <dt>ความรู้พื้นฐาน</dt>
-        <dd class="tags">
-        <span class="tag">HTML / CSS</span>
-        <span class="tag">DOM เบื้องต้น</span>
-        <span class="tag">JavaScript เบื้องต้น</span>
-        <span class="tag">Git เบื้องต้น</span>
-        </dd>
-      </div>
-      <div>
-        <dt>อยากศึกษาต่อ</dt>
-        <dd class="tags">
-        <span class="tag">วิศวกรรมคอมพิวเตอร์</span>
-        <span class="tag">วิทยาการคอมพิวเตอร์</span>
-        <span class="tag">เทคโนโลยีสารสนเทศ</span>
-        <span class="tag">สาขาเกม & ดิจิทัล</span>
-        </dd>
-      </div>
-      </dl>
-      </div>
-      </div>
-    </section>
-
-    <section id="gallery">
-      <style>
-.gallery img {
-  width: 100%;
-  height: 120px;
-  object-fit: cover;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-.gallery img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-}
-</style>
-
-      <h2 style="text-align: center;">คลังรูปภาพ</h2>
-      <div class="gallery" aria-live="polite">
-        <style>
-          .gallery {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 8px;
-}
-
-@media (max-width: 780px) {
-  .gallery {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-        </style>
-        <img loading="lazy" src="https://picsum.photos/seed/1/800/600" alt="Gallery 1" tabindex="0" />
-        <img loading="lazy" src="https://picsum.photos/seed/2/800/600" alt="Gallery 2" tabindex="0" />
-        <img loading="lazy" src="https://picsum.photos/seed/3/800/600" alt="Gallery 3" tabindex="0" />
-        <img loading="lazy" src="https://picsum.photos/seed/4/800/600" alt="Gallery 4" tabindex="0" />
-        <img loading="lazy" src="https://picsum.photos/seed/5/800/600" alt="Gallery 5" tabindex="0" />
-        <img loading="lazy" src="https://picsum.photos/seed/6/800/600" alt="Gallery 6" tabindex="0" />
-        <img loading="lazy" src="https://picsum.photos/seed/7/800/600" alt="Gallery 7" tabindex="0" />
-        <img loading="lazy" src="https://picsum.photos/seed/8/800/600" alt="Gallery 8" tabindex="0" />
-      </div>
-      <style>
-#lightbox {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.8);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  z-index: 9999;
-
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.4s ease-in-out;
-}
-
-#lightbox.show {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-#lb-close {
-  position: absolute;
-  top: 18px;
-  right: 18px;
-  background: transparent;
-  border: none;
-  color: #fff;
-  font-size: 28px;
-  cursor: pointer;
-}
-
-#lb-img {
-  max-width: 90%;
-  max-height: 85%;
-  border-radius: 8px;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.5);
-  transition: transform 0.4s ease-in-out;
-}
-
-#lightbox.show #lb-img {
-  transform: scale(1);
-}
-
-#lb-img {
-  transform: scale(0.8);
-}
-
-      </style>
-      <div id="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
-        <button id="lb-close" aria-label="ปิด">&times;</button>
-        <img id="lb-img" src="" alt="ขยายรูป" />
-      </div>
-
-<script>
-(function(){
-  const header = document.querySelector('header');
-  const headerHeight = header ? header.offsetHeight : 0;
-
-  const imgs = document.querySelectorAll('.gallery img');
-  const lightbox = document.getElementById('lightbox');
-  const lbImg = document.getElementById('lb-img');
-  const lbClose = document.getElementById('lb-close');
-
-  const navToggle = document.getElementById('nav-toggle');
-  const mainNav = document.getElementById('main-nav');
-
-  let lastFocused = null;
-
-  function openLightbox(src, alt){
-    lastFocused = document.activeElement;
-    lbImg.src = src;
-    lbImg.alt = alt || 'ขยายรูป';
-    lightbox.classList.add('show');
-    lightbox.setAttribute('aria-hidden','false');
-    lbClose.focus();
-  }
-
-  function closeLightbox(){
-    lightbox.classList.remove('show');
-    lightbox.setAttribute('aria-hidden','true');
-    lbImg.src = '';
-    if(lastFocused && typeof lastFocused.focus === 'function'){
-      lastFocused.focus();
-    }
-  }
-
-  imgs.forEach(img=>{
-    img.style.cursor = 'zoom-in';
-    img.addEventListener('click', e=> openLightbox(e.currentTarget.src, e.currentTarget.alt));
-    img.addEventListener('keydown', e=> {
-      if(e.key === 'Enter' || e.key === ' ') { 
-        e.preventDefault(); 
-        openLightbox(e.currentTarget.src, e.currentTarget.alt); 
-      }
-    });
-  });
-
-  lbClose.addEventListener('click', closeLightbox);
-  lightbox.addEventListener('click', e=>{
-    if(e.target === lightbox) closeLightbox();
-  });
-  document.addEventListener('keydown', e=>{
-    if(e.key === 'Escape' && lightbox.classList.contains('show')) closeLightbox();
-  });
-
-  // Nav toggle behavior
-  if(navToggle && mainNav){
-    navToggle.addEventListener('click', ()=>{
-      const expanded = navToggle.getAttribute('aria-expanded') === 'true';
-      navToggle.setAttribute('aria-expanded', String(!expanded));
-      mainNav.classList.toggle('show');
-    });
-
-    // Close nav when link clicked (mobile)
-    mainNav.querySelectorAll('a[href^="#"]').forEach(link => {
-      link.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if(!target) return;
-
-        if(mainNav.classList.contains('show')){
-          mainNav.classList.remove('show');
-          navToggle.setAttribute('aria-expanded','false');
+    <script>
+        function copyPhone(event) {
+            event.preventDefault();
+            const phoneNumber = "0901880046";
+            navigator.clipboard.writeText(phoneNumber).then(() => {
+                alert("คัดลอกเบอร์โทรเรียบร้อยแล้ว: " + phoneNumber);
+            }).catch(err => {
+                console.error("คัดลอกไม่สำเร็จ:", err);
+            });
         }
 
-        if(target.id === 'about' || target.id === 'timetable'){
-          const topPos = target.getBoundingClientRect().top + window.scrollY - headerHeight;
-          window.scrollTo({top: topPos, behavior:'smooth'});
-        } else {
-          target.scrollIntoView({behavior: 'smooth', block: 'center'});
+        function copyText(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                alert("คัดลอกเรียบร้อยแล้ว: " + text);
+            }).catch(err => {
+                console.error("คัดลอกไม่สำเร็จ:", err);
+            });
         }
-      });
-    });
-  } else {
-    document.querySelectorAll('nav.navbar a[href^="#"]').forEach(link => {
-      link.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if(!target) return;
-        if(target.id === 'about' || target.id === 'timetable'){
-          const topPos = target.getBoundingClientRect().top + window.scrollY - headerHeight;
-          window.scrollTo({top: topPos, behavior:'smooth'});
-        } else {
-          target.scrollIntoView({behavior: 'smooth', block: 'center'});
-        }
-      });
-    });
-  }
-})();
-</script>
 
+        (function() {
+            const header = document.querySelector('header');
+            const headerHeight = header ? header.offsetHeight : 0;
 
-    </section>
+            const imgs = document.querySelectorAll('.gallery img');
+            const lightbox = document.getElementById('lightbox');
+            const lbImg = document.getElementById('lb-img');
+            const lbClose = document.getElementById('lb-close');
 
+            const navToggle = document.getElementById('nav-toggle');
+            const mainNav = document.getElementById('main-nav');
+            const brandLink = document.querySelector('.brand');
 
-<section id="contact">
-  <style>
-    .contact-item img {
-      width: 80px;
-      height: 80px;
-      transition: transform 0.3s ease-in-out;
-      cursor: pointer;
-    }
+            let lastFocused = null;
 
-    .contact-item img:hover {
-      transform: scale(1.2);
-    }
+            function openLightbox(src, alt) {
+                lastFocused = document.activeElement;
+                lbImg.src = src;
+                lbImg.alt = alt || 'ขยายรูป';
+                lightbox.classList.add('show');
+                lightbox.setAttribute('aria-hidden', 'false');
+                lbClose.focus();
+            }
 
-    .contact-item p {
-      cursor: pointer;
-      user-select: text;
-      display: inline-block;
-      margin-top: 10px;
-      padding: 5px 10px;
-      border-radius: 6px;
-      background-color: #f0f0f0;
-      transition: background-color 0.2s;
-    }
+            function closeLightbox() {
+                lightbox.classList.remove('show');
+                lightbox.setAttribute('aria-hidden', 'true');
+                lbImg.src = '';
+                if (lastFocused && typeof lastFocused.focus === 'function') {
+                    lastFocused.focus();
+                }
+            }
 
-    .contact-item p:hover {
-      background-color: #ddd;
-    }
-  </style>
+            imgs.forEach(img => {
+                img.style.cursor = 'zoom-in';
+                img.addEventListener('click', e => openLightbox(e.currentTarget.src, e.currentTarget.alt));
+                img.addEventListener('keydown', e => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        openLightbox(e.currentTarget.src, e.currentTarget.alt);
+                    }
+                });
+            });
 
-  <h2>ติดต่อเรา</h2>
-  
-  <div class="contact-container">
-    
-    <div class="contact-item">
-      <a href="#" onclick="copyPhone(event)">
-        <img src="https://cdn-icons-png.flaticon.com/512/597/597177.png" alt="phone" />
-      </a>
-      <p onclick="copyPhone(event)">โทรศัพท์ : 0901880046</p>
-    </div>
+            if (lbClose) lbClose.addEventListener('click', closeLightbox);
+            if (lightbox) {
+                lightbox.addEventListener('click', e => {
+                    if (e.target === lightbox) closeLightbox();
+                });
+            }
+            document.addEventListener('keydown', e => {
+                if (e.key === 'Escape' && lightbox && lightbox.classList.contains('show')) closeLightbox();
+            });
 
-    <div class="contact-item">
-      <a href="https://www.facebook.com/ChayangkulChueacharoen/">
-        <img src="https://cdn-icons-png.flaticon.com/512/145/145802.png" alt="facebook" />
-      </a>
-      <p onclick="copyText('ชยางกูร เชื้อเจริญ')">Facebook : ชยางกูร เชื้อเจริญ</p>
-    </div>
+            // Nav toggle behavior
+            if (navToggle && mainNav) {
+                navToggle.addEventListener('click', () => {
+                    const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+                    navToggle.setAttribute('aria-expanded', String(!expanded));
+                    mainNav.classList.toggle('show');
+                });
+                mainNav.querySelectorAll('a[href^="#"]').forEach(link => {
+                    link.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        const href = this.getAttribute('href');
+                        const target = document.querySelector(href);
+                        if (!target) return;
+                        if (href === '#about') {
+                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                            setTimeout(()=>{
+                                const h = target.querySelector('h2');
+                                if(h){ h.setAttribute('tabindex','-1'); h.focus(); }
+                            }, 600);
 
-    <div class="contact-item">
-      <a href="https://www.instagram.com/sssnnh__/">
-        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="instagram" />
-      </a>
-      <p onclick="copyText('sssnnh__')">Instagram : sssnnh_</p>
-    </div>
-  </div>
+                        } else if (target.id === 'timetable') {
+                            const topPos = target.getBoundingClientRect().top + window.scrollY - headerHeight;
+                            window.scrollTo({ top: topPos, behavior: 'smooth' });
+                        } else {
+                            target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        }
+                    });
+                });
+            }
 
-  <script>
-    function copyPhone(event) {
-      event.preventDefault();
-      const phoneNumber = "0901880046";
-      navigator.clipboard.writeText(phoneNumber).then(() => {
-        alert("คัดลอกเบอร์โทรเรียบร้อยแล้ว: " + phoneNumber);
-      }).catch(err => {
-        console.error("คัดลอกไม่สำเร็จ:", err);
-      });
-    }
-
-    function copyText(text) {
-      navigator.clipboard.writeText(text).then(() => {
-        alert("คัดลอกเรียบร้อยแล้ว: " + text);
-      }).catch(err => {
-        console.error("คัดลอกไม่สำเร็จ:", err);
-      });
-    }
-  </script>
-</section>
-
-<style>
-  #contact {
-    text-align: center;
-    padding: 20px 0;
-  }
-
-  .contact-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
-    margin-top: 20px;
-  }
-
-  .contact-item {
-    display: flex;
-    flex-direction: column; 
-    align-items: center;
-    gap: 8px;
-  }
-
-  .contact-item img {
-    width: 80px;
-    height: 80px;
-  }
-</style>
-
-
-<section id="timetable">
-<style>
-  
-  #timetable {
-    max-width: 100%;
-    overflow-x: auto;
-    padding: 20px;
-    font-size: 10px;
-    border: 1px solid #ccc;
-    overflow: hidden;
-  }
-
-  #timetable table {
-    width: 100%;
-    border-collapse: collapse;
-    table-layout: fixed;
-  }
-
-  #timetable th,
-  #timetable td {
-    border: 1px solid #ccc;
-    padding: 4px 5px;
-    text-align: center;
-    vertical-align: middle;
-    white-space: normal;
-    word-break: break-word;
-    line-height: 1.5;
-    background-color: #fff;
-  }
-
-  #timetable th {
-    background-color: #f0f0f0;
-    position: sticky;
-    top: 0;
-    z-index: 2;
-  }
-
-  #timetable tbody tr:first-child td {
-    background-color: #f3f3f3;
-  }
-
-  #timetable table tr:hover td {
-    background-color: rgba(0, 0, 0, 0.05);
-    transition: background-color 0.3s ease;
-  }
-
-  td {
-    white-space: pre-line;
-  }
-</style>
-
-
-
-
-  <h2 style="text-align: center;">ตารางเรียนของฉัน</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>วัน / คาบ</th>
-        <th>0</th>
-        <th>1</th>
-        <th>2</th>
-        <th>3</th>
-        <th>4</th>
-        <th>5</th>
-        <th>6</th>
-        <th>7</th>
-        <th>8</th>
-        <th>9</th>
-        <th>10</th>
-        <th>11</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th>เวลา</th>
-        <td>07.30-08.20</td>
-        <td>08.20-09.10</td>
-        <td>09.10-10.00</td>
-        <td>10.00-10.50</td>
-        <td>10.50-11.40</td>
-        <td>11.40-12.30</td>
-        <td>12.30-13.20</td>
-        <td>13.20-14.10</td>
-        <td>14.10-15.00</td>
-        <td>15.00-15.50</td>
-        <td>15.50-16.40</td>
-        <td>16.40-17.30</td>
-      </tr>
-      <tr>
-        <th>จันทร์</th>
-        <td>โฮมรูม<br>ครู<br>ที่ปรึกษา</td>
-        <td>ค32202<br>ครูภัทรานี<br>215</td>
-        <td>ก32905<br>ครูติณณภพ<br>ห้องพวงคราม</td>
-        <td>ว32224<br>ครูศุภณัฐ<br>922</td>
-        <td>ว32224<br>ครูศุภณัฐ<br>922</td>
-        <td>อ32232<br>ครูเพ็ญศิริ<br>434</td>
-        <td>พัก<br>กลาง<br>วัน</td>
-        <td>อ32102<br>ครูสหภาพ<br>241</td>
-        <td>ว32204<br>ครูรสสุคนธ์<br>941</td>
-        <td>ท32102<br>ครูนุชสุคนธ์<br>225</td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <th>อังคาร</th>
-        <td>โฮมรูม<br>ครู<br>ที่ปรึกษา</td>
-        <td>ค32102<br>ครูอนุทิน<br>131</td>
-        <td>อ32102<br>ครู Ville<br>335</td>
-        <td>อาเซียน<br>เสรีภาษา</td>
-        <td>ว32204<br>ครูรสสุคนธ์<br>941</td>
-        <td>ว32244<br>ครูณัฐญาดา<br>932</td>
-        <td>พัก<br>กลาง<br>วัน</td>
-        <td>ส32103<br>ครูพิราวรรณ<br>433</td>
-        <td>ค32202<br>ครูภัทรานี<br>215</td>
-        <td>ส่งเสริมวิชาการ<br>126</td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <th>พุธ</th>
-        <td>โฮมรูม<br>ครู<br>ที่ปรึกษา</td>
-        <td>ว32244<br>ครูณัฐญาดา<br>931</td>
-        <td>ว32244<br>ครูณัฐญาดา<br>931</td>
-        <td>อ32232<br>ครูเพ็ญศิริ<br>434</td>
-        <td>ท32102<br>ครูนุชสุคนธ์<br>225</td>
-        <td>ว32224<br>ครูศุภณัฐ<br>921</td>
-        <td>พัก<br>กลาง<br>วัน</td>
-        <td>ค32102<br>ครูอนุทิน</td>
-        <td>ว32204<br>ครูรสสุคนธ์<br>941</td>
-        <td>ว32204<br>ครูรสสุคนธ์<br>941</td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <th>พฤหัสฯ</th>
-        <td>ก32908<br>จิตอาสา<br>ที่ปรึกษา</td>
-        <td>กิจกรรม<br>โรงเรียน<br>วิถีพุทธ</td>
-        <td>ก32908<br>ประชุม<br>ระดับ</td>
-        <td>ค32202<br>ครูภัทรานี<br>215</td>
-        <td>ว32172<br>ครูพลากร<br>345</td>
-        <td>ว32172<br>ครูพลากร<br>345</td>
-        <td>พัก<br>กลาง<br>วัน</td>
-        <td>ว30161<br>ครูลักษณ์อนง<br>932</td>
-        <td>ว30161<br>ครูลักษณ์อนง<br>932</td>
-        <td>IS<br>สายวิทย์<br>931</td>
-        <td>IS<br>สายวิทย์<br>931</td>
-        <td></td>
-      </tr>
-      <tr>
-        <th>ศุกร์</th>
-        <td>ผู้ดี<br>บางปะกอก<br>ส30226</td>
-        <td>พ32102<br>ครูศรายุทธ<br>ส.วอลเลย์</td>
-        <td>ศ32102<br>ครูจุฑามาศ<br>333</td>
-        <td>ค32202<br>ครูภัทรานี<br>215</td>
-        <td>อ32102<br>ครูสหภาพ<br>335</td>
-        <td>ส32103<br>ครูพิราวรรณ<br>433</td>
-        <td>พัก<br>กลาง<br>วัน</td>
-        <td>ว30281<br>ครูธีระพงษ์<br>345</td>
-        <td>ว30281<br>ครูธีระพงษ์<br>345</td>
-        <td>กิจกรรม<br>กีฬา<br>คณะสี</td>
-        <td>กิจกรรม<br>กีฬา<br>คณะสี</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-</section>
-
-  </main>
-
-  <footer>
-    ผู้พัฒนา : นาย ชยางกูร เชื้อเจริญ  
-  </footer>
+            document.addEventListener('keydown', function(e){
+                if(e.key === 'Home'){
+                    e.preventDefault();
+                    const about = document.getElementById('about');
+                    if(about){
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                        setTimeout(()=>{
+                            const h = about.querySelector('h2');
+                            if(h){ h.setAttribute('tabindex','-1'); h.focus(); }
+                        }, 400);
+                    } else {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+                }
+            });
+            if (brandLink) {
+                brandLink.addEventListener('click', function(e){
+                    e.preventDefault();
+                    const about = document.getElementById('about');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    if(about){
+                        setTimeout(()=>{
+                            const h = about.querySelector('h2');
+                            if(h){ h.setAttribute('tabindex','-1'); h.focus(); }
+                        }, 500);
+                    }
+                });
+            }
+        })();
+    </script>
 </body>
-</html>
+</html> 
